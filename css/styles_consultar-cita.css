@@ -1,191 +1,279 @@
-:root {
-    --primary-color: #17313B;
-    --btn-main: #0F7772;
-    --btn-principal: #168C86;
-    --bg-color: #F4F5F0;
-    --surface-color: #ffffff;
-    --text-color: #0f172a;
-    --text-muted: #63767C;
-    --color-claro: #e2e8f0;
-    --shadow-sm: 0 1px 3px rgba(62, 45, 45, 0.1);
-    --radius: 8px;
-}
 
+/* Configuración general */
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    background: var(--bg-color);
-    color: var(--text-color);
     font-family: "Segoe UI", system-ui, sans-serif;
-    line-height: 1.5;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #F4F5F0;
+    color: #17313B;
+    min-height: 100vh;
 }
 
-.pagina-consultar-cita {
-    width: min(1000px, calc(100% - 2rem));
-    margin: 0 auto;
-    padding: 3rem 0;
+/* Contenedor principal */
+.contenedor {
+    width: 90%;
+    max-width: 1250px;
+    margin: 45px auto;
 }
 
-.encabezado-pagina {
-    margin-bottom: 2rem;
-    text-align: center;
+/* Encabezado */
+.encabezado {
+    margin-bottom: 30px;
 }
 
-.encabezado-pagina h1 {
-    margin: 0 0 0.5rem;
-    color: var(--primary-color);
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
+.etiqueta {
+    color: #168C86;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
 }
 
-.encabezado-pagina p {
-    margin: 0;
-    color: var(--text-muted);
+.encabezado h1 {
+    color: #0B2E3F;
+    font-size: 32px;
+    margin: 8px 0;
 }
 
-.consulta-layout {
-    display: grid;
-    grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.4fr);
-    gap: 1.5rem;
-    align-items: start;
+.encabezado p {
+    color: #63767C;
+    font-size: 15px;
 }
 
-.consulta-formulario,
-.cita-resultado {
-    padding: clamp(1.25rem, 3vw, 2rem);
-    border: 1px solid var(--color-claro);
-    border-radius: var(--radius);
-    background: var(--surface-color);
-    box-shadow: var(--shadow-sm);
+/* Tarjetas */
+.tarjeta-busqueda,
+.resultados {
+    background-color: #FFFFFF;
+    border: 1px solid #DBE4E3;
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 25px;
 }
 
-.consulta-formulario h2,
-.cita-resultado h2 {
-    margin: 0 0 1.25rem;
-    color: var(--primary-color);
-    font-size: 1.2rem;
+.titulo-seccion h2,
+.resultados-encabezado h2 {
+    color: #0B2E3F;
+    font-size: 20px;
+    margin-bottom: 7px;
+}
+
+.titulo-seccion p,
+.resultados-encabezado p {
+    color: #63767C;
+    font-size: 14px;
+}
+
+/* Formulario de búsqueda */
+.formulario-busqueda {
+    display: flex;
+    align-items: end;
+    gap: 15px;
+    margin-top: 22px;
 }
 
 .campo {
-    display: grid;
-    gap: 0.4rem;
-    margin-bottom: 1rem;
+    flex: 1;
 }
 
 .campo label {
-    color: var(--primary-color);
-    font-size: 0.9rem;
+    display: block;
+    font-size: 14px;
     font-weight: 600;
+    margin-bottom: 9px;
 }
 
 .campo input {
     width: 100%;
-    min-height: 46px;
-    padding: 0.7rem 0.8rem;
-    border: 1px solid #cbd5d8;
-    border-radius: 6px;
-    background: #fff;
-    color: var(--text-color);
-    font: inherit;
+    padding: 13px;
+    border: 1px solid #DBE4E3;
+    border-radius: 7px;
+    background-color: #FBFCFA;
+    color: #17313B;
+    font-size: 14px;
+    outline: none;
 }
 
 .campo input:focus {
-    outline: 3px solid rgba(22, 140, 134, 0.2);
-    border-color: var(--btn-principal);
+    border-color: #168C86;
+    box-shadow: 0 0 0 3px #DFF2EF;
 }
 
-.boton {
-    display: inline-flex;
-    min-height: 46px;
-    align-items: center;
-    justify-content: center;
-    padding: 0.7rem 1.2rem;
-    border: 0;
-    border-radius: 6px;
-    background: var(--btn-principal);
-    color: #fff;
-    font: inherit;
-    font-weight: 700;
-    text-decoration: none;
+/* Botones */
+.btn-buscar {
+    background-color: #168C86;
+    color: #FFFFFF;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 600;
     cursor: pointer;
+    transition: 0.3s;
 }
 
-.boton:hover {
-    background: var(--btn-main);
+.btn-buscar:hover {
+    background-color: #0F7772;
 }
 
-.consulta-formulario .boton {
-    width: 100%;
+/* Encabezado de resultados */
+.resultados-encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
 }
 
-.cita-resultado[hidden] {
-    display: none;
+.contador {
+    background-color: #DFF2EF;
+    color: #0F7772;
+    padding: 9px 13px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
 }
 
-.cita-resultado p {
-    margin: 0.4rem 0;
-    color: var(--text-muted);
+/* Filtros */
+.filtros {
+    display: flex;
+    gap: 10px;
+    margin: 25px 0 20px;
+    flex-wrap: wrap;
 }
 
-.cita-detalles {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
-    margin: 1.25rem 0 0;
-}
-
-.cita-detalles div {
-    padding: 1rem;
+.filtro {
+    background-color: #FBFCFA;
+    color: #63767C;
+    border: 1px solid #DBE4E3;
+    padding: 9px 16px;
     border-radius: 6px;
-    background: #f7f9f8;
+    cursor: pointer;
+    font-size: 13px;
 }
 
-.cita-detalles dt {
-    color: var(--text-muted);
-    font-size: 0.85rem;
+.filtro:hover,
+.filtro.activo {
+    background-color: #DFF2EF;
+    color: #0F7772;
+    border-color: #168C86;
 }
 
-.cita-detalles dd {
-    margin: 0.25rem 0 0;
-    color: var(--primary-color);
-    font-weight: 700;
+/* Tabla */
+.tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
 }
 
-.estado-cita {
-    display: inline-flex;
-    padding: 0.3rem 0.7rem;
-    border-radius: 999px;
-    background: #e7f4f2;
-    color: var(--btn-main);
-    font-size: 0.85rem;
-    font-weight: 700;
+.tabla-citas {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 850px;
 }
 
-.estado-cita--pendiente {
-    background: #fff4d6;
-    color: #805b00;
+.tabla-citas thead {
+    background-color: #0B2E3F;
+    color: #FFFFFF;
 }
 
-.estado-cita--cancelada {
-    background: #fee8e7;
-    color: #a3322b;
+.tabla-citas th {
+    padding: 15px 12px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 600;
 }
 
-@media (max-width: 700px) {
-    .consulta-layout {
-        grid-template-columns: 1fr;
+.tabla-citas td {
+    padding: 16px 12px;
+    border-bottom: 1px solid #DBE4E3;
+    font-size: 13px;
+}
+
+.tabla-citas tbody tr:hover {
+    background-color: #FBFCFA;
+}
+
+/* Estados */
+.estado {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.pendiente {
+    background-color: #FFF4F0;
+    color: #9A422F;
+}
+
+.confirmada {
+    background-color: #DBF2E6;
+    color: #216E4D;
+}
+
+.cancelada {
+    background-color: #FFF4F0;
+    color: #9A422F;
+}
+
+/* Botón detalles */
+.btn-detalles {
+    background-color: transparent;
+    color: #168C86;
+    border: 1px solid #168C86;
+    padding: 7px 12px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.btn-detalles:hover {
+    background-color: #168C86;
+    color: #FFFFFF;
+}
+
+/* Nota */
+.nota {
+    color: #63767C;
+    font-size: 12px;
+    margin-top: 18px;
+}
+
+/* Diseño responsive */
+@media (max-width: 768px) {
+
+    .contenedor {
+        width: 94%;
+        margin: 25px auto;
     }
-}
 
-@media (max-width: 520px) {
-    .pagina-consultar-cita {
-        width: min(100% - 1.25rem, 1000px);
-        padding: 2rem 0;
+    .encabezado h1 {
+        font-size: 26px;
     }
 
-    .cita-detalles {
-        grid-template-columns: 1fr;
+    .tarjeta-busqueda,
+    .resultados {
+        padding: 18px;
     }
+
+    .formulario-busqueda {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-buscar {
+        width: 100%;
+    }
+
+    .resultados-encabezado {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
 }

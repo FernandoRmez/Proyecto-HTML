@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Consultar Citas | Centro Medico </title>
+
+         <link rel="stylesheet" href="../css/styles_consultar-cita.css" />
+mz
+    </head>
+
+
+    <body>
+        <main class="contenedor">
+            <section class="encabezado">
+                <div>
+                    <span class="etiqueta">GESTION DE CITAS</span>
+                    <h1>Consultar citas</h1>
+                    <p>Consultar el estado y los detalles de tus citas medicas.</p>
+                </div>
+            </section>
+
+            <section class="tarjeta-busqueda">
+                <div class="titulo-seccion">
+                    <h2>Buscar una cita</h2>
+                    <p>Ingreso tu numero de identidad para consultar tus citas.</p>
+                </div>
+
+                <form class="formulario-busqueda">
+                    <div class="campo">
+                        <label for="identidad">Numero de identidad</label>
+                        <input
+                        type="text"
+                        id="identidad"
+                        placeholder="Ej. 1503-2005-01628"
+                        maxlength="15"
+                        >
+                    </div>
+
+                    <button type="submit" class="btn-buscar">Buscar citas</button>
+
+                </form>
+
+
+            </section>
+
+            <section class="resultado">
+                <div class="resultados-encabezado">
+                    <div>
+                        <h2>Resultados de busqueda</h2>
+                        <p>Listado de citas medicas registradas.</p>
+                    </div>
+                    <span class="contenedor">3 citas encontradas</span>
+                </div>
+                <div class="filtros">
+                    <button class="filtro activo">Todas</button>
+                    <button class="filtro">Pendientes</button>
+                    <button class="filtro">Confirmadas</button>
+                    <button class="filtro">Canceladas</button>
+                </div>
+                 <div class="tabla-contenedor">
+
+                <table class="tabla-citas">
+
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Especialidad</th>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                            <th>Médico</th>
+                            <th>Estado</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>#CIT-001</td>
+                            <td>Medicina general</td>
+                            <td>25/11/2026</td>
+                            <td>09:00 AM</td>
+                            <td>Dr. Carlos López</td>
+                            <td>
+                                <span class="estado pendiente">
+                                    Pendiente
+                                </span>
+                            </td>
+                            <td>
+                                <button class="btn-detalles">
+                                    Ver detalles
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>#CIT-002</td>
+                            <td>Odontología</td>
+                            <td>28/11/2026</td>
+                            <td>10:30 AM</td>
+                            <td>Dra. María Flores</td>
+                            <td>
+                                <span class="estado confirmada">
+                                    Confirmada
+                                </span>
+                            </td>
+                            <td>
+                                <button class="btn-detalles">
+                                    Ver detalles
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>#CIT-003</td>
+                            <td>Pediatría</td>
+                            <td>02/12/2026</td>
+                            <td>02:00 PM</td>
+                            <td>Dr. José Martínez</td>
+                            <td>
+                                <span class="estado cancelada">
+                                    Cancelada
+                                </span>
+                            </td>
+                            <td>
+                                <button class="btn-detalles">
+                                    Ver detalles
+                                </button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+             <p class="nota">
+                Los resultados mostrados son datos de ejemplo.
+            </p>
+
+            </section>
+
+
+
+        </main>
+
+
+
+
+    </body>
+
+</html>
