@@ -44,15 +44,15 @@
     <g font-family="&#39;Inter&#39;, &#39;Segoe UI&#39;, system-ui, sans-serif" filter="url(#softShadow)">
         <!-- Dominio de Marca -->
         <text x="130" y="58" font-size="34" font-weight="800" fill="#0F172A" letter-spacing="-0.5">
-            CMC
+            MRV SALUD
         </text>
         
         <!-- Subtítulo Institucional -->
-        <text x="132" y="82" font-size="14" font-weight="600" fill="#0284C7" letter-spacing="3.5">
-            CENTRO MÉDICO CATACAMAS
+        <text x="132" y="82" font-size="14" font-weight="600" fill="#0284C7" letter-spacing="6.8">
+            CENTRO MÉDICO
         </text>
 
         <!-- Indicador de Punto Verde (Acento) -->
-        <circle cx="227" cy="50" r="4.5" fill="#10B981" />
+        <circle cx="213" cy="48" r="3.5" fill="#10B981" />
     </g>
 </svg>

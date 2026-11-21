@@ -1,0 +1,460 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portal Web | Agendar Cita | MRV Salud</title>
+    <link rel="stylesheet" href="../css/styles_encabezado_pie.css">
+    <link rel="stylesheet" href="../css/styles_agendar_cita.css">
+</head>
+
+<body>
+
+    <header>
+
+    
+        <div class="panel_anuncio">
+
+            <a href="../pages/contacto.html">
+                <img src="../assets/img/telefono.svg"
+                     alt="Icono teléfono"
+                     class="icono">
+                Emergencias: +504 2234-5555 |
+            </a>
+
+            <a href="#">
+                <img src="../assets/img/horario.svg"
+                     alt="Icono horario"
+                     class="icono">
+                Atención: Lun–Sáb, 7:00 a.m. – 7:00 p.m.
+            </a>
+
+        </div>
+
+        <!-- Encabezado principal -->
+        <div class="encabezado">
+
+            <!-- Logo -->
+            <a href="../index.html" class="logo-centromedico">
+                <img src="../assets/img/logo-centromedico.svg"
+                     alt="Logo Centro Médico MRV Salud"
+                     class="logo-hospital"
+                     height="50">
+            </a>
+
+            <!-- Menú de navegación -->
+            <nav class="nav-principal">
+
+                <a href="../index.html">Inicio</a>
+                <a href="../pages/especialidades.html">Especialidades</a>
+                <a href="../pages/especialistas.html">Especialistas</a>
+                <a href="../pages/consultar-cita.html">Consultar cita</a>
+                <a href="../pages/contacto.html">Contacto</a>
+
+            </nav>
+
+            <!-- Acciones del usuario -->
+            <div class="acciones-usuario">
+
+                <a class="btn-agendar" href="../pages/agendar_cita.html">
+                    <img src="../assets/img/calendario.svg"
+                         alt="Icono calendario"
+                         class="icono">
+                    Agendar una cita
+                </a>
+
+                <a class="btn-login" href="../pages/login.html">
+                    <img src="../assets/img/usuario.svg"
+                         alt="Icono usuario"
+                         class="icono">
+                    Inicia sesión
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- Títulos de la página -->
+        <section class="titulos_pagina">
+
+            <p class="titulo_pequeño">RESERVA EN LÍNEA</p>
+
+            <p class="subtitulo_pagina">
+                Agenda cita médica
+            </p>
+
+            <p class="descripcion_pagina">
+                Completa los datos y recibe tu comprobante de reserva al instante.
+            </p>
+
+        </section>
+
+
+
+        <div class="contenedor_cita">
+
+
+            <!-- FORMULARIO -->
+            <form class="formulario_cita">
+
+                <div class="formulario">
+
+
+                    <!-- SECCIÓN 1: DATOS DEL PACIENTE -->
+
+                    <div class="datos_paciente">
+
+                        <h2>Datos del paciente</h2>
+
+                        <!-- aqui empezamos a construir las columnas -->
+                        <div class="fila_1">
+
+                            <div class="campo">
+
+                                <label for="nombre"> Nombre completo: </label>
+
+                                <input type="text" id="nombre"name="nombre" placeholder="Escribe tu nombre" required>
+
+                            </div>
+
+
+                            <div class="campo">
+
+                                <label for="apellido">Apellido:</label>
+
+                                <input type="text" id="apellido"name="apellido" placeholder="Escribe tu apellido"required>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Fila 2: Género y fecha de nacimiento -->
+                        <div class="fila_2">
+
+                            <div class="campo">
+
+                                <label for="genero"> Género: </label>
+
+                                <select id="genero" name="genero" required>
+
+                                    <option value="">
+                                        Seleccione un género
+                                    </option>
+
+                                    <option value="masculino">
+                                        Masculino
+                                    </option>
+
+                                    <option value="femenino">
+                                        Femenino
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="campo">
+
+                                <label for="fecha_nacimiento"> Fecha de nacimiento: </label>
+
+                                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" placeholder="Selecciona tu fecha de nacimiento"required>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Fila 3: Correo y teléfono -->
+                        <div class="fila_3">
+
+                            <div class="campo">
+
+                                <label for="email_paciente"> Correo electrónico:</label>
+
+                                <input type="email" id="email_paciente" name="email" placeholder="Escribe tu correo electrónico" required>
+
+                            </div>
+
+
+                            <div class="campo">
+
+                                <label for="telefono_paciente"> Teléfono:</label>
+
+                                <input type="tel"id="telefono_paciente"name="telefono" placeholder="Escribe tu teléfono" required>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="datos_cita">
+
+                        <h2>Datos de la cita</h2>
+
+
+                        <!-- Fila 4: Tipo de cita y especialidades -->
+                        <div class="fila_6">
+
+
+                            <!-- Tipo de cita -->
+                            <div class="campo tipo_cita">
+
+                                <p>Tipo de cita</p>
+
+                                <select id="tipo" name="tipo_cita"required>
+
+                                    <option value="">Seleccione un tipo de cita</option>
+
+                                    <option value="nuevo"> Nuevo</option>
+
+                                    <option value="subsecuente"> Subsecuente</option>
+
+                                </select>
+
+
+                            </div>
+
+
+                            <!-- Especialidad y especialista -->
+                            <div class="fila_7">
+
+                                <div class="campo">
+
+                                    <label for="especialidad"> Especialidad: </label>
+
+                                    <input type="text" id="especialidad" name="especialidad" placeholder="Escribe la especialidad" required>
+
+                                </div>
+
+
+                                <div class="campo">
+
+                                    <label for="especialista"> Especialista:</label>
+
+                                    <input type="text" id="especialista" name="especialista" placeholder="Escribe el nombre del especialista" required>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Fila 5: Fecha y horario -->
+                        <div class="fila_8">
+
+                            <div class="campo">
+
+                                <label for="fecha_cita">Fecha:</label>
+
+                                <input type="date"id="fecha_cita"name="fecha_cita"required placeholder="Selecciona la fecha de la cita">
+
+                            </div>
+
+
+                            <div class="campo">
+
+                                <label for="horario_cita"> Horario:</label>
+
+                                <input type="text"id="horario_cita"name="horario"required placeholder="Escribe el horario de la cita">
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Botón para enviar -->
+                        <button class="btn_enviar_cita" type="submit">
+                            Agendar cita
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+
+            <!-- =====================================
+                 4. PANEL LATERAL
+            ====================================== -->
+
+            <aside class="panel_pasos">
+
+                <h2 class="paso_a_paso">Tu cita, paso a paso</h2>
+                <hr>
+
+                <p class="paso_1">1. Ingresa tus datos personales</p>
+                <p class="explicacion">Usaremos esta información para identificarte.</p>
+                <hr>
+
+                <p class="paso_1">2. Selecciona</p>
+                <p class="explicacion">Especialidad, médico y horario.</p>
+                <hr>
+
+                <p class="paso_1">3. Recibe tu comprobante</p>
+                <p class="explicacion">Guarda tu código para consultar la cita.</p>
+                
+                <a href="../pages/consultar-cita.html" class="consulta">Ya tengo una cita</a>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================
+         5. PIE DE PÁGINA
+    ====================================== -->
+
+    <footer class="pie_pagina">
+
+        <div class="pie_contenido">
+
+
+            <!-- Columna 1: Identidad -->
+            <section class="pie_identidad">
+
+                <a href="../index.html" class="logo_pie">
+
+                    <span class="icono_logo">+</span>
+
+                    <span class="nombre_centro">
+
+                        <strong>MRV Salud</strong>
+
+                        <small>HOSPITAL & CENTRO MÉDICO</small>
+
+                    </span>
+
+                </a>
+
+                <p>
+                    Medicina de excelencia con la calidez y cercanía
+                    que cada persona merece.
+                </p>
+
+            </section>
+
+
+            <!-- Columna 2: Portal -->
+            <section class="pie_columna">
+
+                <h3>PORTAL</h3>
+
+                <ul>
+
+                    <li>
+                        <a href="../index.html">Inicio</a>
+                    </li>
+
+                    <li>
+                        <a href="../pages/especialidades.html">
+                            Especialidades
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../pages/especialistas.html">
+                            Especialistas
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../pages/contacto.html">
+                            Contacto
+                        </a>
+                    </li>
+
+                </ul>
+
+            </section>
+
+
+            <!-- Columna 3: Pacientes -->
+            <section class="pie_columna">
+
+                <h3>PACIENTES</h3>
+
+                <ul>
+
+                    <li>
+                        <a href="../pages/agendar_cita.html">
+                            Agendar cita
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../pages/consultar-cita.html">
+                            Consultar cita
+                        </a>
+                    </li>
+
+                </ul>
+
+            </section>
+
+
+            <!-- Columna 4: Contacto -->
+            <section class="pie_columna">
+
+                <h3>CONTACTO</h3>
+
+                <ul>
+
+                    <li>
+                        <a href="tel:+50422345555">
+                            +504 2234-5555
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="mailto:atencion@mrv_salud.hn">
+                            atencion@mrv_salud.hn
+                        </a>
+                    </li>
+
+                    <li>
+                        Tegucigalpa, Honduras
+                    </li>
+
+                </ul>
+
+            </section>
+
+        </div>
+
+
+        <!-- Parte inferior del pie de página -->
+        <div class="pie_inferior">
+
+            <p>
+                &copy; 2026 Centro médico MRV Salud.
+                Todos los derechos reservados.
+            </p>
+
+            <div class="enlaces-legales">
+
+                <a href="#">Privacidad</a>
+                <a href="#">Términos de uso</a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

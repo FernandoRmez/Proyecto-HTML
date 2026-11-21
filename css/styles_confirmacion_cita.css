@@ -1,0 +1,121 @@
+:root {
+    --primary-color: #17313B;
+    --btn-main: #0F7772;
+    --btn-principal: #168C86;
+    --bg-color: #F4F5F0;
+    --surface-color: #ffffff;
+    --text-color: #0f172a;
+    --text-muted: #63767C;
+    --color-claro: #e2e8f0;
+    --shadow-sm: 0 1px 3px rgba(62, 45, 45, 0.1);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --texto_principal: #17313B;
+    --radius: 8px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.5;
+    padding: 0.3rem;
+}
+
+.titulos_pagina {
+    text-align: center;
+    color: var(--texto_principal);
+}
+.titulo_pequeño {
+    margin-top: 70px;
+    margin-bottom: 5px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    border-top: 1px solid #0d3434;
+    padding-top: 8px;
+    display: inline-block;
+}
+
+.subtitulo_pagina {
+    font-size: 55px;
+    font-family: Georgia, serif;
+}
+
+.descripcion_pagina {
+    font-size: 14px;
+    margin-top: 0;
+}
+
+.tabla_confirmacion {
+    width: 85%;
+    max-width: 850px;
+    margin: 35px auto;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin-bottom: 30px;
+}
+
+/* ENCABEZADO */
+.encabezado_tabla {
+    text-align: left;
+    padding: 25px;
+    background-color: #f5f8f7;
+    color: #173b4a;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: normal;
+    border-bottom: 1px solid #d9e2e2;
+    text-align:center ;
+}
+.subtitulo_tabla{
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-weight: normal;
+    
+}
+
+/* TITULO DE LOS DETALLES */
+.titulo_detalles {
+    text-align: left;
+    padding: 20px 25px;
+    color: #173b4a;
+    font-size: 15px;
+    border-bottom: 1px solid #d9e2e2;
+}
+
+/* CELDAS */
+.tabla_confirmacion tbody th,
+.tabla_confirmacion tbody td {
+    padding: 22px 25px;
+    border-bottom: 1px solid #d9e2e2;
+    text-align: left;
+    width: 50%;
+
+}
+
+/* NOMBRES DE LOS CAMPOS */
+.tabla_confirmacion tbody th {
+    color: #64818b;
+    font-size: 15px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+}
+
+/* INFORMACIÓN DEL PACIENTE */
+.tabla_confirmacion tbody td {
+    color: #173b4a;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: right;
+}
+.ultima_fila {
+    text-align: center;
+    font-style: italic;
+    font-size: 14px;
+    background-color:  var(--text-color);
+    color: var(--bg-color);
+}

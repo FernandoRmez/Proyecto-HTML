@@ -1,16 +1,15 @@
 :root {
-    /*  */
-    --primary-color: #17313B;       /* Texto Principal  */
-    --btn-main: #0F7772;            /* Botones */
-    --btn-principal: #168C86;       /*  botón principal */
-    --bg-color: #F4F5F0;            /* Fondo Principal */
-    --surface-color: #ffffff;       /* Tarjetas/formularios */
-    --text-color: #0f172a;          /* Texto Principal */
-    --text-muted: #63767C;          /* Texto Secundario  */
-    --color-claro: #e2e8f0;        /* Bordes  */
+    --primary_color: #17313B;       /* Texto Principal / Oscuro */
+    --btn_main: #0F7772;            /* Botones hover */
+    --btn_principal: #168C86;       /* Botón principal */
+    --bg_color: #F4F5F0;            /* Fondo Principal */
+    --surface_color: #ffffff;       /* Tarjetas / Formularios */
+    --text_color: #0f172a;          /* Texto Principal */
+    --text_muted: #63767C;          /* Texto Secundario */
+    --color_claro: #e2e8f0;         /* Bordes */
     
-    --shadow-sm: 0 1px 3px rgba(62, 45, 45, 0.1);
-    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+    --shadow_sm: 0 1px 3px rgba(62, 45, 45, 0.1);
+    --shadow_md: 0 4px 6px -1px rgba(0,0,0,0.1);
     --radius: 8px;                  /* Bordes redondeados estándar */
 }
 
@@ -22,153 +21,473 @@
 
 body {
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
+    background-color: var(--bg_color);
+    color: var(--text_color);
     line-height: 1.5;
-    padding: 0.3rem;
-}
-        /* ---------------------- */
-.panel_anuncio {
-    background-color: var(--primary-color);
-    color: #ffffff;
-    text-align: right;
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
-    border-bottom: 1px solid var(--border-color);
+    overflow-x: hidden; /* Evita scroll horizontal accidental */
 }
 
-/* Contenedor flexible para alinear en 1 sola fila */
-.encabezado{
-    background-color: var(--surface-color);
-    display: flex;
-    justify-content: space-between; /* Separa Logo, Menú e Iconos a los extremos */
-    align-items: center;            /* Centra todo verticalmente */
-    padding: 1rem 1.5rem;
-    border-bottom: 1px solid var(--border-color);
+/* Limita el ancho en pantallas muy grandes (monitores 2K/4K) */
+main {
+    max-width: 1480px;
+    margin: 0;
 }
 
-.logo-hospital {
-    height: 50px;
-    width: auto;
-    display: block;
-    transition: transform 0.3s ease;
-}
-
-.logo-hospital:hover {
-    transform: scale(1.02);
-}
-
-/* menú de navegación centrado */
-.nav-principal {
-    display: flex;
-    gap: 1.5rem; /* espacio uniforme entre enlaces */
-}
-
-.nav-principal a {
-    color: var(--text-color);
-    font-weight: 500;
-    font-size: 0.95rem;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.nav-principal a:hover {
-    color: var(--text-muted);
-}
-
-/* Iconos de la derecha */
-.acciones-usuario {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.acciones-usuario .icono {
-    width: 32px;
-    height: 32px;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-}
-
-.acciones-usuario .icono:hover {
-    transform: scale(1.1); /* Efecto sutil al pasar el cursor */
-}
-
+/* ---------------------- BANNER PRINCIPAL ---------------------- */
 .bannerprincipal {
     display: flex;
-    gap: 1rem; /* Espacio entre las dos imágenes */
-    justify-content: center; /* Centra las imágenes horizontalmente */
-    align-items: center; /* Centra las imágenes verticalmente */
-    padding: 2rem;
-    background-color: var(--bg-color);
+    gap: 2.5rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 2.5rem;
+    background-color: var(--surface_color);
+    margin: 1.5rem;
     border-radius: var(--radius);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow_md);
 }
+
 .banner-box {
-    flex: 1; /* Cada banner-box ocupa la mitad del espacio disponible */
-    padding: 1rem;
+    flex: 1;
+    min-width: 0; /* Evita desbordamientos en flexbox */
 }
+
+.banner-box h1 {
+    /* Escala fluida entre 2rem (móvil) y 2.8rem (escritorio) */
+    font-size: clamp(2rem, 3.8vw, 2.8rem);
+    line-height: 1.15;
+    color: var(--primary_color);
+    margin: 1rem 0;
+}
+
+.tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--btn_principal);
+    background-color: rgba(22, 140, 134, 0.1);
+    padding: 4px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
 .text-green {
-    color: var(--btn-principal);
-    font-weight: bold;
+    color: var(--btn_principal);
 }
-.banner-white {
-    background-color: var(--surface-color);
-    padding: 2rem;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-md);
-    text-align: center;
-    
+
+.banner-box p {
+    color: var(--text_muted);
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
 }
-.banner-dark {
-    background-color: var(--text-color);
-    padding: 2rem;
-    color: var(--bg-color);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-md);
-    text-align: center;
-    
+
+.banner-botones {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que bajen de línea si no caben */
+    gap: 1.2rem 1.5rem;
+    margin-bottom: 2.5rem;
 }
-.banner-image{
-    max-width: 100%;
-    height: auto;
-    border-radius: var(--radius);
-    margin-top: 1rem;
+
+.enlace-secundario {
+    color: var(--primary_color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.enlace-secundario:hover {
+    text-decoration: underline;
 }
 
 .btn-agendar {
-    background-color: var(--btn-principal);
-    display: inline-block;
-    color: var(--bg-color);
+    background-color: var(--btn_principal);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #ffffff;
     border: none;
-    text-align: center;
     text-decoration: none;
-    padding: 10px 20px;
-    font-size: 15px;
-    border-radius: 4px;
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .btn-agendar:hover {
-    background-color: var(--btn-main); /* Tono más oscuro al posar el cursor */
-    transform: translateY(-2px); /* Pequeño efecto de elevación */
+    background-color: var(--btn_main);
+    transform: translateY(-2px);
 }
 
-.banner-dual {
+.icono-flecha {
+    width: 16px;
+    height: 16px;
+    filter: brightness(0) invert(1);
+}
+
+/* Estadísticas dentro del Banner */
+.estadisticas {
     display: flex;
-    gap: 1rem; /* Espacio entre las dos imágenes */
-    justify-content: center; /* Centra las imágenes horizontalmente */
-    align-items: center; /* Centra las imágenes verticalmente */
-    padding: 2rem;
-    background-color: var(--surface-color);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-md);
+    flex-wrap: wrap;
+    gap: 1.5rem 2.5rem;
+    border-top: 1px solid var(--color_claro);
+    padding-top: 1.5rem;
 }
-.img-fluida {
-    max-width: 100%;
-    border-radius: var(--radius);
+
+.stat-item h3 {
+    font-size: clamp(1.5rem, 2.5vw, 1.8rem);
+    color: var(--primary_color);
 }
-.imagen-box {
+
+.stat-item p {
+    font-size: 0.85rem;
+    margin: 0;
+    color: var(--text_muted);
+}
+
+/* Imagen derecha con tarjeta flotante */
+.imagen-derecha {
+    position: relative;
+    width: 100%;
+}
+
+.banner-image {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    display: block;
+}
+
+.floating-card {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    max-width: fit-content;
+    background: var(--surface_color);
+    padding: 12px 18px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow_md);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.floating-card .icono {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.floating-card strong {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--primary_color);
+}
+
+.floating-card span {
+    font-size: 0.8rem;
+    color: var(--text_muted);
+}
+
+/* ---------------------- ACCESOS RÁPIDOS ---------------------- */
+.accesos-rapidos {
+    display: grid;
+    /* Se adapta automáticamente de 3 columnas a 2 y luego a 1 */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin: 0 1.5rem 2rem 1.5rem;
+}
+
+.card-acceso {
+    background: var(--surface_color);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow_sm);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-acceso:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow_md);
+}
+
+.card-acceso > div:nth-child(2) {
+    flex: 1; /* Empuja la flecha hacia la derecha de forma uniforme */
+}
+
+.card-acceso div h4 {
+    color: var(--primary_color);
+    font-size: 1rem;
+    margin-bottom: 2px;
+}
+
+.card-acceso div p {
+    color: var(--text_muted);
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+.card-icon {
+    background: rgba(22, 140, 134, 0.1);
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.card-icon img {
+    width: 24px;
+    height: 24px;
+}
+
+.flecha-card {
+    font-size: 1.2rem;
+    color: var(--btn_principal);
+    font-weight: bold;
+}
+
+/* ---------------------- SECCIÓN ESPECIALIDADES ---------------------- */
+.seccion-especialidades {
+    background-color: var(--surface_color);
+    margin: 1.5rem;
+    padding: 3rem 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow_md);
+}
+
+.seccion-header {
     text-align: center;
+    max-width: 600px;
+    margin: 0 auto 2.5rem auto;
+}
+
+.seccion-header h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--primary_color);
+    margin: 0.5rem 0 1rem 0;
+}
+
+.seccion-header p {
+    color: var(--text_muted);
+    font-size: 0.95rem;
+}
+
+.grid-especialidades {
+    display: grid;
+    /* 4 columnas en desktop, 2 en tablet, 1 en móvil */
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.card-especialidad {
+    background: var(--bg_color);
+    padding: 1.8rem 1.2rem;
+    border-radius: var(--radius);
+    text-align: left;
+    border: 1px solid var(--color_claro);
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.card-especialidad:hover {
+    border-color: var(--btn_principal);
+    transform: translateY(-2px);
+}
+
+.icono-esp img {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 1rem;
+}
+
+.card-especialidad h3 {
+    font-size: 1.15rem;
+    color: var(--primary_color);
+    margin-bottom: 0.5rem;
+}
+
+.card-especialidad p {
+    font-size: 0.85rem;
+    color: var(--text_muted);
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Alinea todos los enlaces inferiores al mismo nivel */
+}
+
+.enlace-card {
+    color: var(--btn_principal);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    align-self: flex-start;
+}
+
+.enlace-card:hover {
+    text-decoration: underline;
+}
+
+.contenedor-boton-centro {
+    text-align: center;
+}
+
+.btn-outline {
+    display: inline-block;
+    border: 1px solid var(--primary_color);
+    color: var(--primary_color);
+    padding: 10px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-outline:hover {
+    background: var(--primary_color);
+    color: #ffffff;
+}
+
+/* ---------------------- BANNER OSCURO INFERIOR ---------------------- */
+.banner-dark-cta {
+    background-color: var(--primary_color);
+    margin: 1.5rem;
+    padding: 3rem;
+    border-radius: var(--radius);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: var(--shadow_md);
+}
+
+.tag-light {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #4fd1c5;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 4px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.cta-contenido h2 {
+    color: #ffffff;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-top: 0.5rem;
+}
+
+.btn-white {
+    background-color: #ffffff;
+    color: var(--primary_color);
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: inline-block;
+    white-space: nowrap;
+    transition: background-color 0.2s;
+}
+
+.btn-white:hover {
+    background-color: var(--bg_color);
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (Tablets y Móviles)
+   ========================================================================== */
+
+/* Tablets y Laptops pequeñas (hasta 992px) */
+@media (max-width: 992px) {
+    .bannerprincipal {
+        flex-direction: column;
+        padding: 2.5rem 2rem;
+        gap: 2rem;
+    }
+
+    .banner-image {
+        height: 350px;
+    }
+
+    .banner-dark-cta {
+        flex-direction: column;
+        text-align: center;
+        padding: 2.5rem 2rem;
+    }
+}
+
+/* Móviles grandes y Tablets verticales (hasta 768px) */
+@media (max-width: 768px) {
+    .bannerprincipal,
+    .seccion-especialidades,
+    .banner-dark-cta {
+        margin: 1rem;
+        padding: 2rem 1.25rem;
+    }
+
+    .accesos-rapidos {
+        margin: 0 1rem 1.5rem 1rem;
+    }
+
+    .banner-image {
+        height: 280px;
+    }
+
+    .estadisticas {
+        justify-content: space-between;
+        gap: 1rem;
+    }
+}
+
+/* Móviles pequeños (hasta 480px) */
+@media (max-width: 480px) {
+    .banner-botones {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .btn-agendar,
+    .btn-white,
+    .btn-outline {
+        width: 100%;
+        text-align: center;
+    }
+
+    .estadisticas {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+
+    /* Hace que el tercer elemento de estadísticas ocupe todo el ancho abajo */
+    .estadisticas .stat-item:last-child {
+        grid-column: span 2;
+    }
+
+    .floating-card {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        max-width: none;
+        padding: 10px 14px;
+    }
+
+    .banner-image {
+        height: 240px;
+    }
 }

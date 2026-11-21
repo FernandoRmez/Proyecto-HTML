@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contacto | MRV Salud</title>
+
+    <style>
+       
+        :root {
+            --verde-principal: #19998f;
+            --verde-oscuro: #11756e;
+            --azul-oscuro: #10293d;
+            --fondo-claro: #f3f5f2;
+            --blanco: #ffffff;
+            --texto: #58636c;
+            --borde: #dce4e2;
+            --error: #b42318;
+        }
+
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: var(--fondo-claro);
+            color: var(--azul-oscuro);
+        }
+
+    
+
+        .contacto {
+            min-height: 100vh;
+            padding: 75px 20px;
+            background:
+                linear-gradient(
+                    rgba(243, 245, 242, 0.95),
+                    rgba(243, 245, 242, 0.95)
+                );
+        }
+
+        /* Limita el ancho del contenido */
+        .contacto__contenedor {
+            width: 100%;
+            max-width: 1150px;
+            margin: 0 auto;
+        }
+
+      
+
+        .contacto__encabezado {
+            max-width: 720px;
+            margin: 0 auto 45px;
+            text-align: center;
+        }
+
+        .contacto__etiqueta {
+            display: inline-block;
+            margin-bottom: 12px;
+            padding: 8px 16px;
+            color: var(--verde-oscuro);
+            background-color: #dff3f0;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .contacto__titulo {
+            margin-bottom: 14px;
+            color: var(--azul-oscuro);
+            font-size: clamp(32px, 5vw, 48px);
+            line-height: 1.1;
+        }
+
+        .contacto__titulo span {
+            color: var(--verde-principal);
+        }
+
+        .contacto__descripcion {
+            color: var(--texto);
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+      
+
+        .tarjetas-contacto {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .tarjeta {
+            position: relative;
+            overflow: hidden;
+            padding: 32px 24px;
+            background-color: var(--blanco);
+            border: 1px solid var(--borde);
+            border-radius: 14px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(16, 41, 61, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Línea decorativa superior */
+        .tarjeta::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: var(--verde-principal);
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(16, 41, 61, 0.14);
+        }
+
+        /* Círculo que contiene cada icono */
+        .tarjeta__icono {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 68px;
+            height: 68px;
+            margin: 0 auto 20px;
+            background-color: var(--verde-principal);
+            color: var(--blanco);
+            border-radius: 50%;
+        }
+
+        /* Tamaño de los iconos SVG */
+        .tarjeta__icono svg {
+            width: 30px;
+            height: 30px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .tarjeta__titulo {
+            margin-bottom: 10px;
+            color: var(--azul-oscuro);
+            font-size: 20px;
+        }
+
+        .tarjeta__texto {
+            color: var(--texto);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .tarjeta__enlace {
+            color: var(--verde-oscuro);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .tarjeta__enlace:hover {
+            text-decoration: underline;
+        }
+
+        
+
+        .formulario-contacto {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            overflow: hidden;
+            background-color: var(--blanco);
+            border-radius: 16px;
+            box-shadow: 0 12px 35px rgba(16, 41, 61, 0.12);
+        }
+
+        /* Parte izquierda del formulario */
+        .formulario-contacto__informacion {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 45px 38px;
+            background-color: var(--azul-oscuro);
+            color: var(--blanco);
+        }
+
+        .formulario-contacto__informacion h2 {
+            margin-bottom: 16px;
+            font-size: 30px;
+            line-height: 1.2;
+        }
+
+        .formulario-contacto__informacion p {
+            margin-bottom: 25px;
+            color: #d9e4e9;
+            line-height: 1.7;
+        }
+
+        .horario {
+            padding: 18px;
+            background-color: rgba(255, 255, 255, 0.08);
+            border-left: 4px solid var(--verde-principal);
+            border-radius: 7px;
+        }
+
+        .horario strong {
+            display: block;
+            margin-bottom: 7px;
+            color: var(--blanco);
+        }
+
+        .horario span {
+            color: #d9e4e9;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Parte derecha del formulario */
+        .formulario-contacto__contenido {
+            padding: 45px 38px;
+        }
+
+        .formulario-contacto__contenido h2 {
+            margin-bottom: 7px;
+            color: var(--azul-oscuro);
+            font-size: 28px;
+        }
+
+        .formulario-contacto__contenido > p {
+            margin-bottom: 28px;
+            color: var(--texto);
+            line-height: 1.6;
+        }
+
+        /* Distribuye dos campos en la misma fila */
+        .formulario__fila {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .formulario__grupo {
+            margin-bottom: 20px;
+        }
+
+        .formulario__grupo label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--azul-oscuro);
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .formulario__grupo input,
+        .formulario__grupo select,
+        .formulario__grupo textarea {
+            width: 100%;
+            padding: 14px 15px;
+            color: var(--azul-oscuro);
+            background-color: #fbfcfc;
+            border: 1px solid var(--borde);
+            border-radius: 7px;
+            font-family: inherit;
+            font-size: 15px;
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .formulario__grupo textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        /* Efecto al seleccionar un campo */
+        .formulario__grupo input:focus,
+        .formulario__grupo select:focus,
+        .formulario__grupo textarea:focus {
+            border-color: var(--verde-principal);
+            box-shadow: 0 0 0 4px rgba(25, 153, 143, 0.12);
+        }
+
+        .formulario__grupo input::placeholder,
+        .formulario__grupo textarea::placeholder {
+            color: #929da4;
+        }
+
+       
+
+        .boton-enviar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 15px 24px;
+            color: var(--blanco);
+            background-color: var(--verde-principal);
+            border: none;
+            border-radius: 7px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .boton-enviar:hover {
+            background-color: var(--verde-oscuro);
+            transform: translateY(-2px);
+        }
+
+        .boton-enviar:focus {
+            outline: 3px solid rgba(25, 153, 143, 0.30);
+            outline-offset: 3px;
+        }
+
+        .boton-enviar svg {
+            width: 19px;
+            height: 19px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* Mensaje mostrado después de enviar */
+        .mensaje-formulario {
+            display: none;
+            margin-top: 18px;
+            padding: 13px;
+            color: #12685f;
+            background-color: #e4f7f3;
+            border: 1px solid #afded7;
+            border-radius: 7px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .mensaje-formulario.visible {
+            display: block;
+        }
+
+      
+        /* Tablet */
+        @media (max-width: 900px) {
+            .tarjetas-contacto {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .tarjeta:last-child {
+                grid-column: 1 / -1;
+            }
+
+            .formulario-contacto {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Teléfono */
+        @media (max-width: 600px) {
+            .contacto {
+                padding: 50px 15px;
+            }
+
+            .tarjetas-contacto {
+                grid-template-columns: 1fr;
+            }
+
+            .tarjeta:last-child {
+                grid-column: auto;
+            }
+
+            .formulario__fila {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .formulario-contacto__informacion,
+            .formulario-contacto__contenido {
+                padding: 32px 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="contacto" id="contacto">
+
+        <div class="contacto__contenedor">
+
+            <!-- Encabezado de la sección -->
+            <header class="contacto__encabezado">
+                <span class="contacto__etiqueta">Estamos para ayudarte</span>
+
+                <h1 class="contacto__titulo">
+                    Ponte en <span>contacto</span>
+                </h1>
+
+                <p class="contacto__descripcion">
+                    Comunícate con nuestro equipo para resolver tus consultas
+                    o solicitar información sobre nuestros servicios médicos.
+                </p>
+            </header>
+
+            <!-- Tarjetas con la información de contacto -->
+            <div class="tarjetas-contacto">
+
+                <!-- Tarjeta de dirección -->
+                <article class="tarjeta">
+
+                    <div class="tarjeta__icono">📍</div>
+
+                    <h2 class="tarjeta__titulo">Nuestra ubicación</h2>
+
+                    <p class="tarjeta__texto">
+                        Comayagüela, Francisco Morazán<br>
+                        Honduras
+                    </p>
+
+                </article>
+
+                <!-- Tarjeta de teléfono -->
+                <article class="tarjeta">
+
+                    <div class="tarjeta__icono">☎</div>
+
+                    <h2 class="tarjeta__titulo">Llámanos</h2>
+
+                    <p class="tarjeta__texto">
+                        <a class="tarjeta__enlace" href="tel:+50422345555">
+                            +504 2234-5555
+                        </a>
+                        <br>
+                        Atención rápida y personalizada
+                    </p>
+
+                </article>
+
+                <!-- Tarjeta de correo -->
+                <article class="tarjeta">
+
+                    <div class="tarjeta__icono">✉</div>
+
+                    <h2 class="tarjeta__titulo">Escríbenos</h2>
+
+                    <p class="tarjeta__texto">
+                        <a
+                            class="tarjeta__enlace"
+                            href="mailto:contacto@clinicamedica.com"
+                        >
+                            contacto@clinicamedica.com
+                        </a>
+                        <br>
+                        Responderemos lo antes posible
+                    </p>
+
+                </article>
+
+            </div>
+
+            <!-- Tarjeta grande que contiene el formulario -->
+            <div class="formulario-contacto">
+
+                <!-- Información lateral -->
+                <aside class="formulario-contacto__informacion">
+
+                    <h2>Tu bienestar es nuestra prioridad</h2>
+
+                    <p>
+                        Completa el formulario y nuestro equipo se pondrá
+                        en contacto contigo para atender tu solicitud.
+                    </p>
+
+                    <div class="horario">
+                        <strong>Horario de atención</strong>
+
+                        <span>
+                            Lunes a sábado<br>
+                            7:00 a. m. a 7:00 p. m.
+                        </span>
+                    </div>
+
+                </aside>
+
+                <!-- Contenido del formulario -->
+                <div class="formulario-contacto__contenido">
+
+                    <h2>Envíanos un mensaje</h2>
+
+                    <p>
+                        Todos los campos marcados con * son obligatorios.
+                    </p>
+
+                    <!-- Formulario de contacto -->
+                    <form id="formulario">
+
+                        <!-- Fila con nombre y teléfono -->
+                        <div class="formulario__fila">
+
+                            <div class="formulario__grupo">
+                                <label for="nombre">Nombre completo *</label>
+
+                                <input
+                                    type="text"
+                                    id="nombre"
+                                    name="nombre"
+                                    placeholder="Escribe tu nombre"
+                                    autocomplete="name"
+                                    required
+                                >
+                            </div>
+
+                            <div class="formulario__grupo">
+                                <label for="telefono">Teléfono *</label>
+
+                                <input
+                                    type="tel"
+                                    id="telefono"
+                                    name="telefono"
+                                    placeholder="+504 0000-0000"
+                                    autocomplete="tel"
+                                    required
+                                >
+                            </div>
+
+                        </div>
+
+                        <!-- Campo de correo -->
+                        <div class="formulario__grupo">
+                            <label for="correo">Correo electrónico *</label>
+
+                            <input
+                                type="email"
+                                id="correo"
+                                name="correo"
+                                placeholder="ejemplo@correo.com"
+                                autocomplete="email"
+                                required
+                            >
+                        </div>
+
+                        <!-- Campo para elegir el motivo -->
+                        <div class="formulario__grupo">
+                            <label for="motivo">Motivo de contacto *</label>
+
+                            <select id="motivo" name="motivo" required>
+                                <option value="" selected disabled>
+                                    Selecciona una opción
+                                </option>
+
+                                <option value="cita">Solicitar una cita</option>
+                                <option value="informacion">Pedir información</option>
+                                <option value="resultados">Consultar resultados</option>
+                                <option value="otro">Otro motivo</option>
+                            </select>
+                        </div>
+
+                        <!-- Campo del mensaje -->
+                        <div class="formulario__grupo">
+                            <label for="mensaje">Mensaje *</label>
+
+                            <textarea
+                                id="mensaje"
+                                name="mensaje"
+                                placeholder="Cuéntanos cómo podemos ayudarte"
+                                required
+                            ></textarea>
+                        </div>
+
+                        <!-- Botón de envío -->
+                        <button class="boton-enviar" type="submit">
+
+                            <span>Enviar mensaje</span>
+
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="m22 2-7 20-4-9-9-4Z"></path>
+                                <path d="M22 2 11 13"></path>
+                            </svg>
+
+                        </button>
+
+                        <!-- Mensaje que aparece al enviar -->
+                        <div
+                            class="mensaje-formulario"
+                            id="mensajeExito"
+                            role="status"
+                            aria-live="polite"
+                        >
+                            El formulario se completó correctamente.
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <script>
+    
+
+        // Selecciona el formulario y el mensaje de confirmación.
+        const formulario = document.getElementById("formulario");
+        const mensajeExito = document.getElementById("mensajeExito");
+
+        // Detecta cuando el usuario intenta enviar el formulario.
+        formulario.addEventListener("submit", function (evento) {
+
+            /*
+             * Evita que la página se recargue.
+             * Posteriormente se puede sustituir por una conexión
+             * con PHP y una base de datos.
+             */
+            evento.preventDefault();
+
+            // Comprueba que los campos obligatorios sean válidos.
+            if (formulario.checkValidity()) {
+
+                // Muestra el mensaje de confirmación.
+                mensajeExito.classList.add("visible");
+
+                // Limpia todos los campos del formulario.
+                formulario.reset();
+
+                // Oculta el mensaje después de cinco segundos.
+                setTimeout(function () {
+                    mensajeExito.classList.remove("visible");
+                }, 5000);
+            }
+        });
+    </script>
+
+</body>
+</html>

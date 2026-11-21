@@ -1,35 +1,55 @@
-<header>
-        <!-- panel del anuncio -->
-        <div class="panel_anuncio">
-            <a><img src="assets/img/telefono.svg" alt="Icono Teléfono" class="icono"> Emergencias: +504 2234-5555 | </a>
-            <a><img src="assets/img/horario.svg" alt="Icono Horario" class="icono"> Atención: Lun–Sáb, 7:00 a.m. – 7:00 p.m</a>
+<header class="site-header">
+    <!-- Panel del anuncio superior -->
+    <div class="panel_anuncio">
+        <div class="panel_anuncio_inner">
+            <a href="tel:+50422345555">
+                <img src="assets/img/telefono.svg" alt="Icono Teléfono" class="icono">
+                Emergencias: <strong>+504 2234-5555</strong>
+            </a>
+            <span class="separador">|</span>
+            <span>
+                <img src="assets/img/horario.svg" alt="Icono Horario" class="icono">
+                Atención: Lun–Sáb, 7:00 a.m. – 7:00 p.m.
+            </span>
         </div>
-        <div class="encabezado">
-            <!--logo  -->
-            <a href="index.html" class="logo-centromedico">
-                <img src="assets/img/logo-centromedico.svg" alt="Logo Hospital Santa Lucía" class="logo-hospital"
-                    height="50">
+    </div>
+
+    <!-- Barra principal de navegación -->
+    <div class="encabezado">
+        <!-- Logo -->
+        <a href="index.html" class="logo-centromedico">
+            <img src="assets/img/logo-centromedico.svg" alt="Logo Centro Médico MRV Salud" class="logo-hospital" height="44">
+        </a>
+
+        <!-- Enlaces de navegación -->
+        <nav class="nav-principal" id="navPrincipal">
+            <a href="index.html" class="activo">Inicio</a>
+            <a href="pages/especialidades.html">Especialidades</a>
+            <a href="pages/especialistas.html">Especialistas</a>
+            <a href="pages/consultar-cita.html">Consultar cita</a>
+            <a href="pages/contacto.html">Contacto</a>
+        </nav>
+
+        <!-- Acciones de usuario + botón hamburguesa en móvil -->
+        <div class="acciones-usuario">
+            <a href="pages/login.html" class="login-link">
+                <img src="assets/img/usuario.svg" alt="Icono Usuario" class="icono-usuario">
+                <span class="login-texto">
+                    <small>ACCESO</small>
+                    <strong>Iniciar sesión</strong>
+                </span>
             </a>
 
-            <nav class="nav-principal">
-                <!-- rutas relativas -->
-                <a href="index.html">Inicio</a>
-                <a href="pages/especialidades.html">Espcialidades</a>
-                <a href="pages/especialistas.html">Especialistas</a>
-                <a href="pages/consultar-cita.html">Consultar cita</a>
-                <a href="pages/contacto.html">Contacto</a>
-            </nav>
+            <a class="btn-agendar-header" href="pages/agendar-cita.html">
+                <img src="assets/img/calendario.svg" alt="Calendario" class="icono-calendario">
+                <span>Agendar cita</span>
+            </a>
 
-            <div class="acciones-usuario">
-                <a href="pages/login.html">
-                    <img src="assets/img/usuario.svg" alt="Icono Usuario" class="icono"> Inicia sesión
-                </a>
-                <button>
-                    <a class="btn-agendar" href="pages/agendar-cita.html">
-                        <img src="assets/img/calendario.svg" alt="calendario"> Agendar una cita
-                    </a>
-                </button>
-
-            </div>
+            <button type="button" class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-    </header>
+    </div>
+</header>

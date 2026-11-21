@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+=======
+:root {
+    --primary_color: #17313B;
+    --btn_main: #0F7772;
+    --btn_principal: #168C86;
+    --bg_color: #F4F5F0;
+    --surface_color: #ffffff;
+    --text_color: #0f172a;
+    --text_muted: #63767C;
+    --color_claro: #e2e8f0;
+    --shadow_sm: 0 1px 3px rgba(62, 45, 45, 0.1);
+    --radius: 8px;
+}
+>>>>>>> 9c91617f9e639e046021b4838ceeeaafce08239f
 
 /* Configuración general */
 * {
@@ -7,10 +22,18 @@
 }
 
 body {
+<<<<<<< HEAD
     font-family: "Segoe UI", Arial, sans-serif;
     background-color: #F4F5F0;
     color: #17313B;
     min-height: 100vh;
+=======
+    margin: 0;
+    background: var(--bg_color);
+    color: var(--text_color);
+    font-family: "Segoe UI", system-ui, sans-serif;
+    line-height: 1.5;
+>>>>>>> 9c91617f9e639e046021b4838ceeeaafce08239f
 }
 
 /* Contenedor principal */
@@ -25,6 +48,7 @@ body {
     margin-bottom: 30px;
 }
 
+<<<<<<< HEAD
 .etiqueta {
     color: #168C86;
     font-size: 12px;
@@ -36,6 +60,17 @@ body {
     color: #0B2E3F;
     font-size: 32px;
     margin: 8px 0;
+=======
+.encabezado-pagina h1 {
+    margin: 0 0 0.5rem;
+    color: var(--primary_color);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+.encabezado-pagina p {
+    margin: 0;
+    color: var(--text_muted);
+>>>>>>> 9c91617f9e639e046021b4838ceeeaafce08239f
 }
 
 .encabezado p {
@@ -43,6 +78,7 @@ body {
     font-size: 15px;
 }
 
+<<<<<<< HEAD
 /* Tarjetas */
 .tarjeta-busqueda,
 .resultados {
@@ -72,6 +108,22 @@ body {
     align-items: end;
     gap: 15px;
     margin-top: 22px;
+=======
+.consulta-formulario,
+.cita-resultado {
+    padding: clamp(1.25rem, 3vw, 2rem);
+    border: 1px solid var(--color_claro);
+    border-radius: var(--radius);
+    background: var(--surface_color);
+    box-shadow: var(--shadow_sm);
+}
+
+.consulta-formulario h2,
+.cita-resultado h2 {
+    margin: 0 0 1.25rem;
+    color: var(--primary_color);
+    font-size: 1.2rem;
+>>>>>>> 9c91617f9e639e046021b4838ceeeaafce08239f
 }
 
 .campo {
@@ -79,14 +131,20 @@ body {
 }
 
 .campo label {
+<<<<<<< HEAD
     display: block;
     font-size: 14px;
+=======
+    color: var(--primary_color);
+    font-size: 0.9rem;
+>>>>>>> 9c91617f9e639e046021b4838ceeeaafce08239f
     font-weight: 600;
     margin-bottom: 9px;
 }
 
 .campo input {
     width: 100%;
+<<<<<<< HEAD
     padding: 13px;
     border: 1px solid #DBE4E3;
     border-radius: 7px;
@@ -110,12 +168,46 @@ body {
     border-radius: 7px;
     font-size: 14px;
     font-weight: 600;
+=======
+    min-height: 46px;
+    padding: 0.7rem 0.8rem;
+    border: 1px solid #cbd5d8;
+    border-radius: 6px;
+    background: #fff;
+    color: var(--text_color);
+    font: inherit;
+}
+
+.campo input:focus {
+    outline: 3px solid rgba(22, 140, 134, 0.2);
+    border-color: var(--btn_principal);
+}
+
+.boton {
+    display: inline-flex;
+    min-height: 46px;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7rem 1.2rem;
+    border: 0;
+    border-radius: 6px;
+    background: var(--btn_principal);
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    text-decoration: none;
+>>>>>>> 9c91617f9e639e046021b4838ceeeaafce08239f
     cursor: pointer;
     transition: 0.3s;
 }
 
+<<<<<<< HEAD
 .btn-buscar:hover {
     background-color: #0F7772;
+=======
+.boton:hover {
+    background: var(--btn_main);
+>>>>>>> 9c91617f9e639e046021b4838ceeeaafce08239f
 }
 
 /* Encabezado de resultados */
@@ -135,12 +227,18 @@ body {
     font-weight: 600;
 }
 
+<<<<<<< HEAD
 /* Filtros */
 .filtros {
     display: flex;
     gap: 10px;
     margin: 25px 0 20px;
     flex-wrap: wrap;
+=======
+.cita-resultado p {
+    margin: 0.4rem 0;
+    color: var(--text_muted);
+>>>>>>> 9c91617f9e639e046021b4838ceeeaafce08239f
 }
 
 .filtro {
@@ -153,6 +251,7 @@ body {
     font-size: 13px;
 }
 
+<<<<<<< HEAD
 .filtro:hover,
 .filtro.activo {
     background-color: #DFF2EF;
@@ -170,6 +269,27 @@ body {
     width: 100%;
     border-collapse: collapse;
     min-width: 850px;
+=======
+.cita-detalles dt {
+    color: var(--text_muted);
+    font-size: 0.85rem;
+}
+
+.cita-detalles dd {
+    margin: 0.25rem 0 0;
+    color: var(--primary_color);
+    font-weight: 700;
+}
+
+.estado-cita {
+    display: inline-flex;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    background: #e7f4f2;
+    color: var(--btn_main);
+    font-size: 0.85rem;
+    font-weight: 700;
+>>>>>>> 9c91617f9e639e046021b4838ceeeaafce08239f
 }
 
 .tabla-citas thead {

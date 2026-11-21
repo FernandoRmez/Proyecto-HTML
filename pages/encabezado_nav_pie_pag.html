@@ -1,163 +1,130 @@
 <!DOCTYPE html>
-<html lang="es">    
+<html lang="es">
 <head>
     <meta charset="utf-8" />
-    <!-- diseño responsivo, width=device-width hace que se adapte a la pantalla, initica configura el zoom -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Portal Web|Sistema de Citas| Centro médico MRV Salud</title>
-    <link rel="stylesheet" href="../css/style_encabezado_pie.css" />
-
-
+    <title>Portal Web | Sistema de Citas | MRV Salud</title>
+    <link rel="stylesheet" href="../css/styles_encabezado_pie.css" />
 </head>
 <body>
     <!-- ENCABEZADO -->
-    <header>
-    <!-- Panel de información -->
-    <div class="panel_anuncio">
-
-        <a href="../pages/contacto.html">
-            <img src="../assets/img/telefono.svg"
-                 alt="Icono teléfono"
-                 class="icono">
-            Emergencias: +504 2234-5555 |
-        </a>
-
-        <a href="#">
-            <img src="../assets/img/horario.svg"
-                 alt="Icono horario"
-                 class="icono">
-            Atención: Lun–Sáb, 7:00 a.m. – 7:00 p.m.
-        </a>
-
-    </div>
-
-    <!-- Encabezado principal -->
-    <div class="encabezado">
-
-        <!-- Logo -->
-        <a href="index.html" class="logo-centromedico">
-            <img src="../assets/img/logo-centromedico.svg"
-                 alt="Logo Centro Médico MRV Salud"
-                 class="logo-hospital"
-                 height="50">
-        </a>
-
-        <!-- Menú de navegación -->
-        <nav class="nav-principal">
-            <a href="../index.html">Inicio</a>
-            <a href="pages/especialidades.html">Especialidades</a>
-            <a href="pages/especialistas.html">Especialistas</a>
-            <a href="pages/consultar-cita.html">Consultar cita</a>
-            <a href="pages/contacto.html">Contacto</a>
-        </nav>
-
-        <!-- acciones del usuario -->
-        <div class="acciones-usuario">
-            <a class="btn-agendar"
-               href="../pages/agendar_cita.html">
-                <img src="../assets/img/calendario.svg"
-                     alt=" logo calendario"
-                     class="icono">
-                Agendar una cita
-            </a>
-            <a class="btn-login" href="pages/login.html">
-                <img src="../assets/img/usuario.svg"
-                     alt="Icono usuario"
-                     class="icono">
-                Inicia sesión
-            </a>
-
+    <header class="site-header">
+        <!-- Panel de información -->
+        <div class="panel_anuncio">
+            <div class="panel_anuncio_inner">
+                <a href="contacto.html">
+                    <img src="../assets/img/telefono.svg" alt="Icono teléfono" class="icono-top">
+                    <span>Emergencias: <strong>+504 2234-5555</strong></span>
+                </a>
+                <span class="separador">|</span>
+                <a href="#">
+                    <img src="../assets/img/horario.svg" alt="Icono horario" class="icono-top">
+                    <span>Atención: Lun–Sáb, 7:00 a.m. – 7:00 p.m.</span>
+                </a>
+            </div>
         </div>
 
-    </div>
-</header>
-
-
-<main>
-
-<!-- AQUI VA TODO EL CONTENIDO PRINCIPAL DE LA PAGINA -->
-
-
-
-</main>
-
-
-
-
-<!-- AQUI INICIA EL PIE DE PAGINA -->
- <footer class="pie_pagina">
-
-    <div class="pie_contenido">
-
-        <!-- cada columna es un section aqui, pero se define la posicion en el css -->
-        <section class="pie_identidad">
-
-            <a href="index.html" class="logo_pie">
-                <span class="icono_logo">+</span>
-
-                <span class="nombre_centro">
-                    <strong>MRV Salud</strong>
-                    <small>HOSPITAL & CENTRO MÉDICO</small>
-                </span>
+        <!-- Encabezado principal -->
+        <div class="encabezado">
+            <!-- Logo -->
+            <a href="../index.html" class="logo-centromedico">
+                <img src="../assets/img/logo-centromedico.svg"
+                     alt="Logo Centro Médico MRV Salud"
+                     class="logo-hospital"
+                     height="50">
             </a>
 
+            <!-- Menú de navegación -->
+            <nav class="nav-principal" id="navPrincipal">
+                <a href="../index.html">Inicio</a>
+                <a href="especialidades.html">Especialidades</a>
+                <a href="especialistas.html">Especialistas</a>
+                <a href="consultar-cita.html">Consultar cita</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+
+            <!-- Acciones del usuario -->
+            <div class="acciones-usuario">
+                <a class="btn-agendar" href="agendar_cita.html">
+                    <img src="../assets/img/calendario.svg" alt="Icono calendario" class="icono-btn">
+                    <span>Agendar una cita</span>
+                </a>
+
+                <a class="btn-login" href="login.html">
+                    <img src="../assets/img/usuario.svg" alt="Icono usuario" class="icono-login">
+                    <span>Inicia sesión</span>
+                </a>
+
+                <button type="button" class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- AQUÍ VA TODO EL CONTENIDO PRINCIPAL DE LA PÁGINA -->
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie_pagina">
+        <div class="pie_contenido">
+            <section class="pie_identidad">
+                <a href="../index.html" class="logo_pie">
+                    <span class="nombre_centro">
+                        <strong>MRV Salud</strong>
+                        <small>HOSPITAL &amp; CENTRO MÉDICO</small>
+                    </span>
+                </a>
+
+                <p>
+                    Medicina de excelencia con la calidez y cercanía
+                    que cada persona merece.
+                </p>
+            </section>
+
+            <section class="pie_columna">
+                <h3>PORTAL</h3>
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="especialidades.html">Especialidades</a></li>
+                    <li><a href="especialistas.html">Especialistas</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </section>
+
+            <section class="pie_columna">
+                <h3>PACIENTES</h3>
+                <ul>
+                    <li><a href="agendar_cita.html">Agendar cita</a></li>
+                    <li><a href="consultar-cita.html">Consultar cita</a></li>
+                </ul>
+            </section>
+
+            <section class="pie_columna">
+                <h3>CONTACTO</h3>
+                <ul>
+                    <li><a href="tel:+50422345555">+504 2234-5555</a></li>
+                    <li><a href="mailto:atencion@mrv_salud.hn">atencion@mrv_salud.hn</a></li>
+                    <li>Tegucigalpa, Honduras</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Parte inferior -->
+        <div class="pie_inferior">
             <p>
-                Medicina de excelencia con la calidez y cercanía
-                que cada persona merece.
+                &copy; 2026 Centro médico MRV Salud.
+                Todos los derechos reservados.
             </p>
 
-        </section>
-
-        <!-- section 2 -->
-        <section class="pie_columna">
-            <h3>PORTAL</h3>
-
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="pages/especialidades.html">Especialidades</a></li>
-                <li><a href="pages/especialistas.html">Especialistas</a></li>
-                <li><a href="pages/contacto.html">Contacto</a></li>
-            </ul>
-        </section>
-
-        <!-- section 3 -->
-        <section class="pie_columna">
-            <h3>PACIENTES</h3>
-
-            <ul>
-                <li><a href="pages/agendar-cita.html">Agendar cita</a></li>
-                <li><a href="pages/consultar-cita.html">Consultar cita</a></li>
-            </ul>
-        </section>
-
-        <!-- section 4 -->
-        <section class="pie_columna">
-            <h3>CONTACTO</h3>
-
-            <ul>
-                <li><a href="tel:+50422345555">+504 2234-5555</a></li>
-                <li><a href="mailto:atencion@mrv_salud.hn">atencion@mrv_salud.hn</a></li>
-                <li>Tegucigalpa, Honduras</li>
-            </ul>
-        </section>
-
-    </div>
-
-    <!-- Parte inferior -->
-    <div class="pie_inferior">
-
-        <p>
-            &copy; 2026 Centro médico MRV Salud.
-            Todos los derechos reservados.
-        </p>
-
-        <div class="enlaces-legales">
-            <a href="#">Privacidad</a>
-            <a href="#">Términos de uso</a>
+            <div class="enlaces-legales">
+                <a href="#">Privacidad</a>
+                <a href="#">Términos de uso</a>
+            </div>
         </div>
-
-    </div>
-
-</footer>
+    </footer>
 </body>
 </html>

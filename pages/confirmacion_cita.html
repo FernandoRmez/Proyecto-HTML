@@ -1,43 +1,182 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="utf-8" />
-    <!-- el viewport sirve para controlar el zoom y el tamaño de la página en dispositivos móviles -->
+    <!-- diseño responsivo, width=device-width hace que se adapte a la pantalla, initica configura el zoom -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Centro médico Catacamas | Confirmacion de cita</title>
-    <link rel="stylesheet" href="../css/styles_confirmacion.css" />
+    <title>Portal Web|Confirmar Cita|Sistema de Citas| MRV Salud</title>
+    <link rel="stylesheet" href="../css/styles_encabezado_pie.css" />
+    <link rel="stylesheet" href="../css/styles_confirmacion_cita.css" />
 </head>
+
 <body>
+    <!-- ENCABEZADO -->
     <header>
-        <h1>Centro médico Catacamas</h1>
-        <div>
-            <!-- cambiar los nombres de los enlaces conforme se actualicen -->
-            <nav>
-                <a href="../index.html">Inicio</a>
-                <a href="../pages/catalogo.html">Catálogo</a>
-                <a href="../pages/shopcart.html">Carrito</a>
-                <a href="../pages/contacto.html">Contacto</a>
-                <a href="../pages/nosotros.html">Nosotros</a>
-            </nav>
+        <!-- Panel de información -->
+        <div class="panel_anuncio">
+            <a href="../pages/contacto.html">
+                <img src="../assets/img/telefono.svg" alt="Icono teléfono" class="icono">
+                Emergencias: +504 2234-5555 |
+            </a>
+
+            <a href="#">
+                <img src="../assets/img/horario.svg" alt="Icono horario" class="icono">
+                Atención: Lun–Sáb, 7:00 a.m. – 7:00 p.m.
+            </a>
         </div>
 
+        <!-- Encabezado principal -->
+        <div class="encabezado">
+            <!-- Logo -->
+            <a href="index.html" class="logo-centromedico">
+                <img src="../assets/img/logo-centromedico.svg" alt="Logo Centro Médico MRV Salud" class="logo-hospital" height="50">
+            </a>
+
+            <!-- Menú de navegación -->
+            <nav class="nav-principal">
+                <a href="../index.html">Inicio</a>
+                <a href="pages/especialidades.html">Especialidades</a>
+                <a href="pages/especialistas.html">Especialistas</a>
+                <a href="pages/consultar-cita.html">Consultar cita</a>
+                <a href="pages/contacto.html">Contacto</a>
+            </nav>
+
+            <!-- acciones del usuario -->
+            <div class="acciones-usuario">
+                <a class="btn-agendar" href="../pages/agendar_cita.html">
+                    <img src="../assets/img/calendario.svg" alt=" logo calendario" class="icono">
+                    Agendar una cita
+                </a>
+
+                <a class="btn-login" href="pages/login.html">
+                    <img src="../assets/img/usuario.svg" alt="Icono usuario" class="icono">
+                    Inicia sesión
+                </a>
+            </div>
+        </div>
     </header>
+
     <main>
+         <!-- Títulos de la página -->
+        <section class="titulos_pagina">
+
+            <p class="titulo_pequeño">RESERVA COMPLETADA</p>
+
+            <p class="subtitulo_pagina">Tu cita está confirmada</p>
+
+            <p class="descripcion_pagina">
+                Hemos registrado tu cita. Guarda tu código de confirmación para futuras consultas.
+            </p>
+
+        </section>
         
-    <section class="formulario">
-        <p>
-            <strong>¡Cita confirmada!</strong><br>
-            Gracias por reservar tu cita con nosotros. 
-            Si tienes alguna pregunta o necesitas realizar cambios en tu cita, no dudes en contactarnos.<br>
-            Acontinuación le mostramos los detalles de su cita:<br>
-        </p>
+            <table class="tabla_confirmacion">
 
+                <thead>
+                    <tr>
+                        <th colspan="2" class="encabezado_tabla">MRV SALUD | CENTRO MÉDICO</th>
+                        
+                    </tr>
+                    <tr>
+                        <th colspan="2" class="subtitulo_tabla">Detalles de la cita</th>
+                    </tr>
+                    </thead>
 
-    </section>
+                <tr>
+                    <th>Código de confirmación</th>
+                    <td>ABC123XYZ</td>
+                </tr>
+                <tr>
+                    <th>Nombre del paciente</th>
+                    <td>Juan Pérez</td>
+                </tr>
+                <tr>
+                    <th>Especialidad</th>
+                    <td>Cardiología</td>
+                </tr>
+                <tr>
+                    <th>Fecha de la cita</th>
+                    <td>15 de julio de 2024</td>
+                </tr>
+                <tr>
+                    <th>Horario</th>
+                    <td>10:00 a.m.</td>
+                </tr>
+               
+            </table>
+            <p class="ultima_fila">RECUERDE LLEGAR CON 30 MINUTOS DE ANTICIPACIÓN, PARA TOMA DE SIGNOS VITALES.</p>
+       
+    
+        
     </main>
+
+    <!-- AQUI INICIA EL PIE DE PAGINA -->
+    <footer class="pie_pagina">
+        <div class="pie_contenido">
+            <!-- cada columna es un section aqui, pero se define la posicion en el css -->
+            <section class="pie_identidad">
+                <a href="index.html" class="logo_pie">
+                    <span class="icono_logo">+</span>
+
+                    <span class="nombre_centro">
+                        <strong>MRV Salud</strong>
+                        <small>HOSPITAL & CENTRO MÉDICO</small>
+                    </span>
+                </a>
+
+                <p>
+                    Medicina de excelencia con la calidez y cercanía
+                    que cada persona merece.
+                </p>
+            </section>
+
+            <!-- section 2 -->
+            <section class="pie_columna">
+                <h3>PORTAL</h3>
+
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="pages/especialidades.html">Especialidades</a></li>
+                    <li><a href="pages/especialistas.html">Especialistas</a></li>
+                    <li><a href="pages/contacto.html">Contacto</a></li>
+                </ul>
+            </section>
+
+            <!-- section 3 -->
+            <section class="pie_columna">
+                <h3>PACIENTES</h3>
+
+                <ul>
+                    <li><a href="pages/agendar-cita.html">Agendar cita</a></li>
+                    <li><a href="pages/consultar-cita.html">Consultar cita</a></li>
+                </ul>
+            </section>
+
+            <!-- section 4 -->
+            <section class="pie_columna">
+                <h3>CONTACTO</h3>
+
+                <ul>
+                    <li><a href="tel:+50422345555">+504 2234-5555</a></li>
+                    <li><a href="mailto:atencion@mrv_salud.hn">atencion@mrv_salud.hn</a></li>
+                    <li>Tegucigalpa, Honduras</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Parte inferior -->
+        <div class="pie_inferior">
+            <p>
+                &copy; 2026 Centro médico MRV Salud.
+                Todos los derechos reservados.
+            </p>
+
+            <div class="enlaces-legales">
+                <a href="#">Privacidad</a>
+                <a href="#">Términos de uso</a>
+            </div>
+        </div>
+    </footer>
 </body>
-
-
-
-
 </html>
